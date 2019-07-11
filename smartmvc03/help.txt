@@ -1,0 +1,43 @@
+step1.导包。
+
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		
+step2.将base包复制过来。
+
+step3.在web.xml文件中，配置DispatcherServlet。
+
+	<servlet>
+    <servlet-name>DispatcherServlet</servlet-name>
+    <servlet-class>base.web.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DispatcherServlet</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+ step4.添加处理器。
+ 		
+ 		方法前要添加@RequestMapping注解，在该注解里面添加请求路径。
+ 		方法要返回视图名。如果是重定向，要在重定向地址前添加"redirect:"。
+ 		
+ step5.添加jsp。
+ 
+ step6.配置处理器。
+ 
+ 		在smartmvc.xml中，添加处理器的配置信息。
+ 		
+ 		<?xml version="1.0" encoding="UTF-8"?>
+		<beans>
+			<!-- 
+				配置处理器：
+					DispatcherServlet会读取该配置信息，
+				然后利用java反射将处理器实例化。
+			 -->
+			<bean class="controller.HelloController"/>
+			<bean class="controller.LoginController" />
+		</beans>

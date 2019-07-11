@@ -1,0 +1,11 @@
+被检测的目标文本
+
+Hello World
+Hello Kitty
+Hello Tom
+Hello Jerry
+16165465
+今天你吃了马？
+
+正则表达式测试案例
+zhao_443@gdaib.edu.cn.com
